@@ -12,7 +12,8 @@ function dirPath(p) {
 const DATEFMT = "dddd, MMMM Do YYYY, H:mm:ss"
 
 const github = new Octokit({
-    userAgent: 'vgmstream-dl v1.0.0'
+    userAgent: 'vgmstream-dl v1.0.0',
+    auth: process.env.GITHUB_API_KEY
 });
 
 const regex = /[^0-9a-f]*/gm;
