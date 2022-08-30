@@ -1,0 +1,24 @@
+{
+    "name": "vgmstream-dl",
+    "version": "1.0.0",
+    "description": "vgmstream downloads frontend",
+    "source": "src/index.html",
+    "repository": "https://github.com/vgmstream/vgmstream-dl",
+    "author": "Kevin López Brante <kevin@kddlb.cl>",
+    "license": "MIT",
+    "devDependencies": {
+        "@parcel/transformer-pug": "2.7.0",
+        "@parcel/transformer-sass": "2.7.0",
+        "parcel": "^2.7.0"
+    },
+    "dependencies": {
+        "@octokit/rest": "^19.0.4",
+        "axios": "^0.27.2",
+        "bootstrap": "^5.2.0",
+        "filesize": "^9.0.11",
+        "moment": "^2.29.4",
+        "parcel-reporter-static-files-copy": "^1.4.0",
+        "popper.js": "^1.16.1",
+        "pug": "^3.0.2"
+    }
+}
