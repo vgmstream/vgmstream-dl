@@ -1,0 +1,54 @@
+doctype html
+html(lang="en")
+    head
+        meta(charset='UTF-8')
+        meta(http-equiv='X-UA-Compatible' content='IE=edge')
+        meta(name='viewport' content='width=device-width, initial-scale=1.0')
+        title Download vgmstream
+        link(rel='stylesheet' href='style.scss')
+        meta(name='description' content="Download vgmstream.")
+        meta(property='og:type' content='website')
+        meta(property='og:title' content='Download vgmstream')
+        meta(name='twitter:card' content='summary_large_image')
+        meta(property='twitter:domain' content='dl.vgmstream.org')
+        meta(name='twitter:title' content='Download vgmstream')
+        meta(name='twitter:description' content="Download vgmstream.")
+
+    body 
+        .container.py-4.px-3.mx-auto.my-auto 
+            h1 Download vgmstream
+            .row 
+                .col-6 
+                    h2 Windows
+                    p 
+                        span Commit #[code= winCommit.sha]
+                        br 
+                        em #[time(datetime=winCommit.committer.date)= winCommit.fmtDate]
+                    hr
+                    p= winCommit.message
+                    hr
+                    ul.list-unstyled
+                        li 
+                            a(href=urls.winCmd) Command-line tools, Winamp and XMPlay plug-ins (#{fileSizes.winCmd.formatted})
+                        li
+                            a(href=urls.winFb2k) foobar2000 component (#{fileSizes.winFb2k.formatted})
+
+                .col-6
+                    h2 Linux (static build)
+                    p 
+                        span Commit #[code= lxCommit.sha]
+                        br 
+                        em #[time(datetime=lxCommit.committer.date)= lxCommit.fmtDate]
+                    hr
+                    p= lxCommit.message
+                    hr
+                    ul.list-unstyled
+                        li 
+                            a(href=urls.lx) Command-line tools (#{fileSizes.lx.formatted})
+
+        .footer
+            .container.py-4.px-3.mx-auto.my-auto
+                p Frontend built on #{currentDate} from commit #[code= env.COMMIT_REF]
+                .float-end
+                    a(href='https://www.netlify.com')
+                        img(src='https://www.netlify.com/v3/img/components/netlify-color-accent.svg' alt='Deploys by Netlify')

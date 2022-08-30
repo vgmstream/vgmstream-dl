@@ -66,3 +66,4 @@ dist/
 # Local Netlify folder
 .netlify
 .parcel-cache
+static/data.json

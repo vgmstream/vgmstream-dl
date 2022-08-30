@@ -3,6 +3,11 @@ const { Octokit } = require("@octokit/rest");
 const fs = require('fs');
 const filesize = require('filesize');
 const moment = require('moment')
+const path = require('path')
+
+function dirPath(p) {
+    return path.join(__dirname, p)
+}
 
 const DATEFMT = "dddd, MMMM Do YYYY, H:mm:ss"
 
@@ -14,7 +19,7 @@ const regex = /[^0-9a-f]*/gm;
 
 const pug = require('pug');
 
-const genIndex = pug.compileFile('src/index.pug');
+const genIndex = pug.compileFile(dirPath('src/index.pug'));
 
 
 (async() => {
@@ -74,7 +79,9 @@ const genIndex = pug.compileFile('src/index.pug');
         winCommit,
         lxCommit,
         urls,
-        fileSizes
+        fileSizes,
+        env: process.env,
+        currentDate: moment.utc().format(DATEFMT)
     }
 
     fs.writeFileSync("src/index.html", genIndex(locals))

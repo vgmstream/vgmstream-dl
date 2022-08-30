@@ -6,6 +6,10 @@
     "repository": "https://github.com/vgmstream/vgmstream-dl",
     "author": "Kevin López Brante <kevin@kddlb.cl>",
     "license": "MIT",
+    "scripts": {
+        "build": "parcel build",
+        "prebuild": "node gen-locals.js"
+    },
     "devDependencies": {
         "@parcel/transformer-pug": "2.7.0",
         "@parcel/transformer-sass": "2.7.0",
