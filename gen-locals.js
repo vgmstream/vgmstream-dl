@@ -61,9 +61,9 @@ const genIndex = pug.compileFile(dirPath('src/index.pug'));
     console.log("Getting filesizes...")
 
     var urls = {
-        winCmd: `https://vgmstream-builds.s3-us-west-1.amazonaws.com/${winCommit.sha}/windows/vgmstream-win.zip`,
-        winFb2k: `https://vgmstream-builds.s3-us-west-1.amazonaws.com/${winCommit.sha}/windows/foo_input_vgmstream.fb2k-component`,
-        lx: `https://vgmstream-builds.s3-us-west-1.amazonaws.com/${lxCommit.sha}/linux/vgmstream-cli.tar.gz`
+        winCmd: `https://cdn.vgmstream.org/${winCommit.sha}/windows/vgmstream-win.zip`,
+        winFb2k: `https://cdn.vgmstream.org/${winCommit.sha}/windows/foo_input_vgmstream.fb2k-component`,
+        lx: `https://cdn.vgmstream.org/${lxCommit.sha}/linux/vgmstream-cli.tar.gz`
     }
 
     var fileSizes = {}
@@ -86,6 +86,7 @@ const genIndex = pug.compileFile(dirPath('src/index.pug'));
     }
 
     fs.writeFileSync("src/index.html", genIndex(locals))
+    
     fs.writeFileSync("static/data.json", JSON.stringify(locals, null, 4))
 
 
