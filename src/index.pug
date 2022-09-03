@@ -45,7 +45,11 @@ html(lang="en")
                     ul.list-unstyled
                         li 
                             a(href=urls.lx) Command-line tools (#{fileSizes.lx.formatted})
-
+            .row 
+                .col-12 
+                    hr
+                    h3 Web version
+                    p A web version by Katie Frogs is available #[a(href="https://katiefrogs.github.io/vgmstream-web/") here].
         .footer
             .container.py-4.px-3.mx-auto.my-auto
                 p Frontend built on #{currentDate} from commit #[code= env.COMMIT_REF]
