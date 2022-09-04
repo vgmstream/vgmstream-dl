@@ -86,7 +86,9 @@ const genIndex = pug.compileFile(dirPath('src/index.pug'));
     }
 
     fs.writeFileSync("src/index.html", genIndex(locals))
-    fs.writeFileSync("static/data.json", JSON.stringify(locals, null, 4))
+    var safelocals = locals
+    delete safelocals.env
+    fs.writeFileSync("static/data.json", JSON.stringify(safelocals, null, 4))
 
 
 })()

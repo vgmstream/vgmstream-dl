@@ -67,3 +67,4 @@ dist/
 .netlify
 .parcel-cache
 static/data.json
+src/index.html
