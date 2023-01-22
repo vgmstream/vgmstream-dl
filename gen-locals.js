@@ -23,7 +23,7 @@ const pug = require('pug');
 const genIndex = pug.compileFile(dirPath('src/index.pug'));
 
 
-(async() => {
+(async () => {
 
     console.debug("Getting Windows commit...")
     var winRequest = await axios.get("https://vgmstream-builds.s3-us-west-1.amazonaws.com/latest_id_win", {
@@ -63,7 +63,7 @@ const genIndex = pug.compileFile(dirPath('src/index.pug'));
     var urls = {
         winCmd: `https://cdn.vgmstream.org/${winCommit.sha}/windows/vgmstream-win.zip`,
         winFb2k: `https://cdn.vgmstream.org/${winCommit.sha}/windows/foo_input_vgmstream.fb2k-component`,
-        lx: `https://cdn.vgmstream.org/${lxCommit.sha}/linux/vgmstream-cli.tar.gz`
+        lx: `https://cdn.vgmstream.org/${lxCommit.sha}/linux/vgmstream-linux-cli.tar.gz`
     }
 
     var fileSizes = {}
